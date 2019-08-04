@@ -10,6 +10,7 @@
 </template>
 
 <script>
+import ProductService from "../service/ProductService.js";
 export default {
   name: "RnkListProduct",
   data() {
@@ -19,9 +20,10 @@ export default {
   },
   methods: {
     getProducts() {
-      fetch("http://localhost:3000/product")
-        .then(result => result.json())
-        .then(products => (this.products = products));
+      ProductService.getInstance()
+        .loadAll()
+        .then(products => (this.products = products))
+        .catch(error => alert(error.message));
     }
   },
   created() {
