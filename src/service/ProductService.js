@@ -14,9 +14,9 @@ export default class ProductService extends BaseService {
     return this._instance;
   }
 
-  loadAll() {
+  query(query = "") {
     return this.http()
-      .get("/product")
+      .get(`/product${query}`)
       .then(result => result.data)
       .catch(error => this.error("Erro ao carregar os produtos", error));
   }

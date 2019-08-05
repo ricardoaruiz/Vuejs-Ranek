@@ -24,6 +24,7 @@ export default class BaseService {
    * @param {*} error
    */
   error(msgError, error) {
+    // eslint-disable-next-line
     console.error(msgError, error);
     throw error;
   }

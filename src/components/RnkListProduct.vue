@@ -10,24 +10,14 @@
 </template>
 
 <script>
-import ProductService from "../service/ProductService.js";
 export default {
   name: "RnkListProduct",
-  data() {
-    return {
-      products: null
-    };
-  },
-  methods: {
-    getProducts() {
-      ProductService.getInstance()
-        .loadAll()
-        .then(products => (this.products = products))
-        .catch(error => alert(error.message));
+  props: {
+    products: {
+      type: Array,
+      required: false,
+      default: () => []
     }
-  },
-  created() {
-    this.getProducts();
   }
 };
 </script>

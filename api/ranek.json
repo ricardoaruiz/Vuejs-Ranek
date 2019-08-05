@@ -45,7 +45,7 @@
     },
     {
       "id": "tablet",
-      "name": "Tabled",
+      "name": "Tablet",
       "description": "Esse é um novo tablet",
       "user_id": 1,
       "price": 999,
