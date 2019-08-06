@@ -30,6 +30,7 @@ export default {
   },
   methods: {
     findProducts() {
+      this.products = [];
       ProductService.getInstance()
         .query(this.querString)
         .then(products => (this.products = products))
