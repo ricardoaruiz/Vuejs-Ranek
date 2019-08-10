@@ -17,7 +17,12 @@ export default class ProductService extends BaseService {
   query(query = "") {
     return this.http()
       .get(`/product${query}`)
-      .then(result => result.data)
+      .then(result => {
+        return {
+          totalProducts: result.headers["x-total-count"],
+          products: result.data
+        };
+      })
       .catch(error => this.error("Erro ao carregar os produtos", error));
   }
 }
