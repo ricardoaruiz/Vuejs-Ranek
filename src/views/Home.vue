@@ -2,21 +2,29 @@
   <section>
     <h1>Compre ou venda</h1>
 
+    <!-- Campo de busca de produtos -->
     <RnkFindProduct @onFind="searchTerm => this.searchTerm = searchTerm" />
 
+    <!-- Componente de paginação -->
     <RnkPagination
       :totalRecords="totalProducts"
       :recordsPerPage="productsPerPage"
       :currentPage="currentPage"
+      :showFirstLastButton="true"
+      :showNextPreviewsButton="true"
       @onSelectPage="pageSelected"
     />
 
+    <!-- Componente de listagem de produtos -->
     <RnkListProduct :products="products" />
 
+    <!-- Componente de paginação -->
     <RnkPagination
       :totalRecords="totalProducts"
       :recordsPerPage="productsPerPage"
       :currentPage="currentPage"
+      :showFirstLastButton="true"
+      :showNextPreviewsButton="true"
       @onSelectPage="pageSelected"
     />
   </section>
