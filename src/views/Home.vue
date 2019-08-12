@@ -56,6 +56,7 @@ export default {
         .then(data => {
           this.products = data.products;
           this.totalProducts = Number(data.totalProducts);
+          window.scrollTo({ top: 0, behavior: "smooth" });
         })
         .catch(error => alert(error.message));
     },

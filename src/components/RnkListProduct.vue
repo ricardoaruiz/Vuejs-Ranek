@@ -1,7 +1,7 @@
 <template>
   <section class="product_container">
-    <transition>
-      <div class="products" v-if="products && products.length">
+    <transition mode="out-in">
+      <div class="products" v-if="products && products.length" key="produtos">
         <div class="product" v-for="product in products" :key="product.id">
           <img
             class="product_image"
@@ -13,10 +13,7 @@
           <p class="product_description">{{ product.description }}</p>
         </div>
       </div>
-    </transition>
-
-    <transition>
-      <div class="products_notfound" v-if="products && products.length === 0">
+      <div class="products_notfound" v-if="products && products.length === 0" key="no-result">
         <p>Produto não encontrado</p>
       </div>
     </transition>
@@ -82,11 +79,5 @@ export default {
     flex-flow: column;
     align-items: center;
   }
-}
-.v-enter {
-  opacity: 0;
-}
-.v-enter-active {
-  transition: opacity 0.6s;
 }
 </style>
