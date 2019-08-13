@@ -3,14 +3,16 @@
     <transition mode="out-in">
       <div class="products" v-if="products && products.length" key="produtos">
         <div class="product" v-for="product in products" :key="product.id">
-          <img
-            class="product_image"
-            :src="product.images[0].content"
-            :alt="product.images[0].title"
-          />
-          <p class="product_price">{{ product.price }}</p>
-          <h2 class="product_title">{{ product.name }}</h2>
-          <p class="product_description">{{ product.description }}</p>
+          <router-link :to="{name: 'product', params: {id: product.id} }">
+            <img
+              class="product_image"
+              :src="product.images[0].content"
+              :alt="product.images[0].title"
+            />
+            <p class="product_price">{{ product.price | currency-format }}</p>
+            <h2 class="product_title">{{ product.name }}</h2>
+            <p class="product_description">{{ product.description }}</p>
+          </router-link>
         </div>
       </div>
       <div class="products_notfound" v-if="products && products.length === 0" key="no-result">

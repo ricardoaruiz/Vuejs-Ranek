@@ -25,4 +25,11 @@ export default class ProductService extends BaseService {
       })
       .catch(error => this.error("Erro ao carregar os produtos", error));
   }
+
+  load(productId) {
+    return this.http()
+      .get(`/product?id=${productId}`)
+      .then(result => result.data[0])
+      .catch(error => this.error("Erro ao carregar os produtos", error));
+  }
 }
