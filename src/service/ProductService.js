@@ -1,5 +1,7 @@
 import BaseService from "./BaseService";
 
+const BASE_PRODUCT_URL = "/product";
+
 export default class ProductService extends BaseService {
   static _instance = null;
 
@@ -16,7 +18,7 @@ export default class ProductService extends BaseService {
 
   query(query = "") {
     return this.http()
-      .get(`/product${query}`)
+      .get(`${BASE_PRODUCT_URL}${query}`)
       .then(result => {
         return {
           totalProducts: result.headers["x-total-count"],
@@ -28,7 +30,7 @@ export default class ProductService extends BaseService {
 
   load(productId) {
     return this.http()
-      .get(`/product?id=${productId}`)
+      .get(`${BASE_PRODUCT_URL}?id=${productId}`)
       .then(result => result.data[0])
       .catch(error => this.error("Erro ao carregar os produtos", error));
   }

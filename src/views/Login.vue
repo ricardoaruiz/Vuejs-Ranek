@@ -15,6 +15,9 @@
 </template>
 
 <script>
+import { mapActions } from "vuex";
+import UserService from "../service/UserService.js";
+
 export default {
   name: "Login",
   data() {
@@ -26,9 +29,15 @@ export default {
     };
   },
   methods: {
+    ...mapActions(["setLoggedUser"]),
     doLogin() {
-      //TODO fazer o login
-      console.log("login");
+      UserService.getInstance()
+        .login({ ...this.login })
+        .then(user => {
+          this.setLoggedUser(user);
+          this.$router.push({ name: "user" });
+        })
+        .catch(error => alert(error));
     }
   }
 };

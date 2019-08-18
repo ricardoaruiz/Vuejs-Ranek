@@ -4,14 +4,23 @@
       <router-link to="/" class="logo">
         <img src="@/assets/ranek.svg" alt="Ranek" />
       </router-link>
-      <router-link to="/login" class="btn">Vender / Login</router-link>
+
+      <router-link to="/login" class="btn" v-if="!isLogged">Vender / Login</router-link>
+      <router-link to="/login" class="btn" v-else>{{userName}}</router-link>
     </nav>
   </header>
 </template>
 
 <script>
+import { mapGetters } from "vuex";
 export default {
-  name: "RnkHeader"
+  name: "RnkHeader",
+  computed: {
+    ...mapGetters(["isLogged", "loggedUser"]),
+    userName() {
+      return this.loggedUser.name.replace(/ .*/, "");
+    }
+  }
 };
 </script>
 

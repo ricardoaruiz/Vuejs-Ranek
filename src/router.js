@@ -2,6 +2,7 @@ import Vue from "vue";
 import Router from "vue-router";
 import Home from "./views/Home.vue";
 import Login from "./views/Login.vue";
+import User from "./views/user/User.vue";
 import RnkProduct from "@/components/RnkProduct.vue";
 
 Vue.use(Router);
@@ -19,6 +20,11 @@ export default new Router({
       path: "/login",
       name: "login",
       component: Login
+    },
+    {
+      path: "/user",
+      name: "user",
+      component: User
     },
     {
       path: "/product/:id",
