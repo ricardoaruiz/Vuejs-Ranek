@@ -1,6 +1,7 @@
 <template>
   <section class="login">
     <h1>Login</h1>
+
     <form>
       <label for="email">E-mail</label>
       <input type="email" name="email" id="email" v-model="login.email" />
@@ -11,15 +12,21 @@
       <button class="btn" @click.prevent="doLogin">Ok</button>
       <a href="#">Esqueci minha senha</a>
     </form>
+
+    <RnkCreateUser />
   </section>
 </template>
 
 <script>
 import { mapActions } from "vuex";
+import RnkCreateUser from "@/components/RnkCreateUser.vue";
 import UserService from "../service/UserService.js";
 
 export default {
   name: "Login",
+  components: {
+    RnkCreateUser
+  },
   data() {
     return {
       login: {
