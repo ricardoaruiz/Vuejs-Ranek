@@ -64,6 +64,7 @@ export default {
       this.user = {
         name: "",
         email: "",
+        password: "",
         zipCode: "",
         street: "",
         number: "",
@@ -75,7 +76,7 @@ export default {
       UserService.getInstance()
         .create({
           name: this.user.name,
-          password: "123456",
+          password: this.user.password,
           email: this.user.email,
           address: {
             street: this.user.street,
@@ -86,6 +87,7 @@ export default {
           }
         })
         .then(result => {
+          this.$emit("onCreateUser", this.user);
           this.newUser();
           this.create = false;
         })

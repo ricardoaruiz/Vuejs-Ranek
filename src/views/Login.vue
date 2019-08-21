@@ -13,7 +13,7 @@
       <a href="#">Esqueci minha senha</a>
     </form>
 
-    <RnkCreateUser />
+    <RnkCreateUser @onCreateUser="doLoginAfterSignup" />
   </section>
 </template>
 
@@ -45,6 +45,10 @@ export default {
           this.$router.push({ name: "user" });
         })
         .catch(error => alert(error));
+    },
+    doLoginAfterSignup(user) {
+      Object.assign(this.login, user);
+      this.doLogin();
     }
   }
 };

@@ -23,6 +23,15 @@
         @blur="sendValue($event)"
       />
 
+      <label for="password">Senha</label>
+      <input
+        type="password"
+        id="password"
+        name="password"
+        :value="user ? user.password : ''"
+        @blur="sendValue($event)"
+      />
+
       <label for="zipCode">Cep</label>
       <input
         type="text"

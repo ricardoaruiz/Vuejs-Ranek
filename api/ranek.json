@@ -14,8 +14,21 @@
       }
     },
     {
-      "name": "Gui",
-      "password": "123456",
+      "name": "rick",
+      "password": "654321",
+      "email": "rick@email.com",
+      "address": {
+        "street": "Alameda dos Resedas",
+        "zip_code": "13162-322",
+        "number": "154",
+        "state": "SP",
+        "city": "Artur Nogueira"
+      },
+      "id": 2
+    },
+    {
+      "name": "gui",
+      "password": "123",
       "email": "gui@email.com",
       "address": {
         "street": "Rua Lacônia",
@@ -24,7 +37,7 @@
         "state": "SP",
         "city": "Santo André"
       },
-      "id": 2
+      "id": 3
     }
   ],
   "product": [
