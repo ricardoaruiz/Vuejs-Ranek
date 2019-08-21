@@ -12,6 +12,19 @@
         "state": "SP",
         "city": "Artur Nogueira"
       }
+    },
+    {
+      "name": "Gui",
+      "password": "123456",
+      "email": "gui@email.com",
+      "address": {
+        "street": "Rua Lacônia",
+        "zip_code": "09271-010",
+        "number": "459",
+        "state": "SP",
+        "city": "Santo André"
+      },
+      "id": 2
     }
   ],
   "product": [

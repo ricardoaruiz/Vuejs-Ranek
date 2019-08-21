@@ -6,25 +6,67 @@
 
     <form class="user_form">
       <label for="name">Nome</label>
-      <input type="text" id="name" name="name" />
+      <input
+        type="text"
+        id="name"
+        name="name"
+        :value="user ? user.name : ''"
+        @blur="sendValue($event)"
+      />
 
       <label for="email">E-mail</label>
-      <input type="email" id="email" name="email" />
-
-      <label for="street">Rua</label>
-      <input type="text" id="street" name="street" />
-
-      <label for="number">Número</label>
-      <input type="text" id="number" name="number" />
-
-      <label for="city">Nome</label>
-      <input type="text" id="city" name="city" />
-
-      <label for="state">Nome</label>
-      <input type="text" id="state" name="state" />
+      <input
+        type="email"
+        id="email"
+        name="email"
+        :value="user ? user.email : ''"
+        @blur="sendValue($event)"
+      />
 
       <label for="zipCode">Cep</label>
-      <input type="text" id="zipCode" name="zipCode" />
+      <input
+        type="text"
+        id="zipCode"
+        name="zipCode"
+        :value="user ? user.zipCode : ''"
+        @blur="sendValue($event)"
+      />
+
+      <label for="street">Rua</label>
+      <input
+        type="text"
+        id="street"
+        name="street"
+        :value="user ? user.street : ''"
+        @blur="sendValue($event)"
+      />
+
+      <label for="number">Número</label>
+      <input
+        type="text"
+        id="number"
+        name="number"
+        :value="user ? user.number  : ''"
+        @blur="sendValue($event)"
+      />
+
+      <label for="city">Cidade</label>
+      <input
+        type="text"
+        id="city"
+        name="city"
+        :value="user ? user.city : ''"
+        @blur="sendValue($event)"
+      />
+
+      <label for="state">Estado</label>
+      <input
+        type="text"
+        id="state"
+        name="state"
+        :value="user ? user.state  : ''"
+        @blur="sendValue($event)"
+      />
 
       <div class="user_form__action">
         <slot name="action"></slot>
@@ -35,7 +77,17 @@
 
 <script>
 export default {
-  name: "RnkUserForm"
+  name: "RnkUserForm",
+  props: {
+    user: undefined
+  },
+  methods: {
+    sendValue(event) {
+      const value = {};
+      value[event.target.name] = event.target.value;
+      this.$emit("onTypedValue", value);
+    }
+  }
 };
 </script>
 
