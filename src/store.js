@@ -38,6 +38,21 @@ export default new Vuex.Store({
     setLoggedUser(context, payload) {
       context.commit("UPDATE_LOGIN", true);
       context.commit("UPDATE_USER", payload);
+    },
+    setUnloggedUser(context) {
+      context.commit("UPDATE_LOGIN", false);
+      context.commit("UPDATE_USER", {
+        id: "",
+        name: "",
+        email: "",
+        address: {
+          zipcode: "",
+          street: "",
+          number: "",
+          city: "",
+          state: ""
+        }
+      });
     }
   },
   getters: {

@@ -42,7 +42,7 @@ export default {
         .login({ ...this.login })
         .then(user => {
           this.setLoggedUser(user);
-          this.$router.push({ name: "user" });
+          this.$router.push({ name: "user_products" });
         })
         .catch(error => alert(error));
     },

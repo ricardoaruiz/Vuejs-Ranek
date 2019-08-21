@@ -3,6 +3,10 @@ import Router from "vue-router";
 import Home from "./views/Home.vue";
 import Login from "./views/Login.vue";
 import User from "./views/user/User.vue";
+import UserProducts from "./views/user/UserProducts.vue";
+import UserData from "./views/user/UserData.vue";
+import UserSales from "./views/user/UserSales.vue";
+import UserPurchases from "./views/user/UserPurchases.vue";
 import RnkProduct from "@/components/RnkProduct.vue";
 
 Vue.use(Router);
@@ -24,7 +28,29 @@ export default new Router({
     {
       path: "/user",
       name: "user",
-      component: User
+      component: User,
+      children: [
+        {
+          path: "products",
+          name: "user_products",
+          component: UserProducts
+        },
+        {
+          path: "purchases",
+          name: "user_purchases",
+          component: UserPurchases
+        },
+        {
+          path: "sales",
+          name: "user_sales",
+          component: UserSales
+        },
+        {
+          path: "data",
+          name: "user_data",
+          component: UserData
+        }
+      ]
     },
     {
       path: "/product/:id",

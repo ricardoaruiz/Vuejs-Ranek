@@ -1,12 +1,11 @@
 <template>
   <header>
     <nav>
-      <router-link to="/" class="logo">
+      <router-link :to="{ name: 'home' }" class="logo">
         <img src="@/assets/ranek.svg" alt="Ranek" />
       </router-link>
-
-      <router-link to="/login" class="btn" v-if="!isLogged">Vender / Login</router-link>
-      <router-link to="/login" class="btn" v-else>{{userName}}</router-link>
+      <router-link :to="{ name: 'login' }" class="btn" v-if="!isLogged">Vender / Login</router-link>
+      <router-link :to="{ name: 'user_products' }" class="btn" v-else>{{userName}}</router-link>
     </nav>
   </header>
 </template>
