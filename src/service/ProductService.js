@@ -34,4 +34,13 @@ export default class ProductService extends BaseService {
       .then(result => result.data[0])
       .catch(error => this.error("Erro ao carregar os produtos", error));
   }
+
+  listByUser(userId) {
+    return this.http()
+      .get(`${BASE_PRODUCT_URL}?user_id=${userId}`)
+      .then(result => result.data)
+      .catch(error =>
+        this.error(`Erro ao listar os produtos do usuário ${userId}`, error)
+      );
+  }
 }

@@ -3,8 +3,8 @@
     {
       "id": 1,
       "name": "Ricardo Almendro Ruiz",
-      "password": "123456",
-      "email": "ricardo.almendro.ruiz@gmail.com",
+      "password": "123",
+      "email": "rruiz@email.com",
       "address": {
         "street": "Alameda dos Resedas",
         "zip_code": "13162-322",
@@ -12,19 +12,6 @@
         "state": "SP",
         "city": "Artur Nogueira"
       }
-    },
-    {
-      "name": "rick",
-      "password": "654321",
-      "email": "rick@email.com",
-      "address": {
-        "street": "Alameda dos Resedas",
-        "zip_code": "13162-322",
-        "number": "154",
-        "state": "SP",
-        "city": "Artur Nogueira"
-      },
-      "id": 2
     },
     {
       "name": "gui",
@@ -37,7 +24,7 @@
         "state": "SP",
         "city": "Santo André"
       },
-      "id": 3
+      "id": 2
     }
   ],
   "product": [
@@ -103,7 +90,7 @@
       "id": "notebook2",
       "name": "Notebook2",
       "description": "Esse é um novo notebook",
-      "user_id": 1,
+      "user_id": 2,
       "price": 4999,
       "sold": false,
       "images": [
@@ -117,7 +104,7 @@
       "id": "smartphone2",
       "name": "Smartphone2",
       "description": "Esse é um novo smartphone",
-      "user_id": 1,
+      "user_id": 2,
       "price": 1999,
       "sold": false,
       "images": [
@@ -131,7 +118,7 @@
       "id": "tablet2",
       "name": "Tablet2",
       "description": "Esse é um novo tablet",
-      "user_id": 1,
+      "user_id": 2,
       "price": 999,
       "sold": false,
       "images": [
@@ -187,7 +174,7 @@
       "id": "notebook4",
       "name": "Notebook4",
       "description": "Esse é um novo notebook",
-      "user_id": 1,
+      "user_id": 2,
       "price": 4999,
       "sold": false,
       "images": [
@@ -201,7 +188,7 @@
       "id": "smartphone4",
       "name": "Smartphone4",
       "description": "Esse é um novo smartphone",
-      "user_id": 1,
+      "user_id": 2,
       "price": 1999,
       "sold": false,
       "images": [
@@ -215,7 +202,7 @@
       "id": "tablet4",
       "name": "Tablet4",
       "description": "Esse é um novo tablet",
-      "user_id": 1,
+      "user_id": 2,
       "price": 999,
       "sold": false,
       "images": [
@@ -271,7 +258,7 @@
       "id": "notebook6",
       "name": "Notebook6",
       "description": "Esse é um novo notebook",
-      "user_id": 1,
+      "user_id": 2,
       "price": 4999,
       "sold": false,
       "images": [
@@ -285,7 +272,7 @@
       "id": "smartphone6",
       "name": "Smartphone6",
       "description": "Esse é um novo smartphone",
-      "user_id": 1,
+      "user_id": 2,
       "price": 1999,
       "sold": false,
       "images": [
@@ -299,7 +286,7 @@
       "id": "tablet6",
       "name": "Tablet6",
       "description": "Esse é um novo tablet",
-      "user_id": 1,
+      "user_id": 2,
       "price": 999,
       "sold": false,
       "images": [

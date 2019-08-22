@@ -15,7 +15,8 @@ export default new Vuex.Store({
       number: "",
       city: "",
       state: ""
-    }
+    },
+    user_products: undefined
   },
   mutations: {
     UPDATE_LOGIN(state, payload) {
@@ -32,6 +33,9 @@ export default new Vuex.Store({
         city: payload.address.city,
         state: payload.address.state
       };
+    },
+    SET_USER_PRODUCTS(state, payload) {
+      state.user_products = payload;
     }
   },
   actions: {
@@ -53,10 +57,15 @@ export default new Vuex.Store({
           state: ""
         }
       });
+      context.commit("SET_USER_PRODUCTS", undefined);
+    },
+    setUserProducts(context, payload) {
+      context.commit("SET_USER_PRODUCTS", payload);
     }
   },
   getters: {
     isLogged: state => state.login,
-    loggedUser: state => state.user
+    loggedUser: state => state.user,
+    userProducts: state => state.user_products
   }
 });
