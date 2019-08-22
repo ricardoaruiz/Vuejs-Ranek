@@ -10,9 +10,11 @@
       </ul>
     </nav>
 
-    <transition>
-      <router-view></router-view>
-    </transition>
+    <div>
+      <transition>
+        <router-view></router-view>
+      </transition>
+    </div>
   </section>
 </template>
 
@@ -35,19 +37,23 @@ export default {
 </script>
 
 <style scoped>
-.user_menu_container {
-  width: 100%;
-  max-width: 800px;
-  margin: 20px auto 0 auto;
+.user_container {
+  display: grid;
+  grid-template-columns: minmax(140px, 200px) 1fr;
+  max-width: 900px;
+  margin: 40px auto;
+  grid-gap: 30px;
+  padding: 20px;
 }
-.user_menu_container ul {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+@media screen and (max-width: 500px) {
+  .user_container {
+    grid-template-columns: 1fr;
+  }
 }
 .user_menu_container li {
   padding: 10px;
-  margin-right: 10px;
+  margin-bottom: 5px;
+  background: #f4f7fc;
 }
 .user_menu_container li.router-link-exact-active {
   background: #87f;
