@@ -33,15 +33,22 @@ export default {
 <style scoped>
 .product {
   display: grid;
-  grid-template-columns: minmax(100px, 200px) 1fr;
+  grid-template-columns: 100px 1fr;
   grid-gap: 20px;
   margin-bottom: 40px;
   position: relative;
 }
 .product_img {
+  margin-top: 20px;
   border-radius: 4px;
   overflow: hidden;
   height: 100px;
+  box-shadow: 0 4px 8px rgba(30, 60, 90, 0.1);
+  transition: all 0.6s;
+}
+.product_img:hover {
+  box-shadow: 0 6px 12px rgba(30, 60, 90, 0.2);
+  transform: scale(1.15);
 }
 .product_info {
   align-self: end;

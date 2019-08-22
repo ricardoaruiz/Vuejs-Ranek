@@ -42,7 +42,7 @@ export default {
   grid-template-columns: minmax(140px, 200px) 1fr;
   max-width: 900px;
   margin: 40px auto;
-  grid-gap: 30px;
+  grid-gap: 80px;
   padding: 20px;
 }
 @media screen and (max-width: 500px) {
