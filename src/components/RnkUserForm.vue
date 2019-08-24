@@ -37,7 +37,7 @@
         type="text"
         id="zipCode"
         name="zipCode"
-        :value="user ? user.zipCode : ''"
+        :value="user ? user.zip_code : ''"
         @blur="sendValue($event)"
       />
 
@@ -95,6 +95,15 @@ export default {
       const value = {};
       value[event.target.name] = event.target.value;
       this.$emit("onTypedValue", value);
+    }
+  },
+  created() {
+    if (this.user) {
+      for (let field in this.user) {
+        const value = {};
+        value[field] = this.user[field];
+        this.$emit("onTypedValue", value);
+      }
     }
   }
 };

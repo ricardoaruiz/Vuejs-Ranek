@@ -18,17 +18,17 @@
 </template>
 
 <script>
+import RnkUserMixin from "@/components/RnkUserMixin.js";
 import RnkUserForm from "@/components/RnkUserForm.vue";
 import UserService from "@/service/UserService.js";
-import { findZipCode } from "@/service/ExternalUtilsService.js";
 
 export default {
   name: "RnkCreateUser",
   components: { RnkUserForm },
+  mixins: [RnkUserMixin],
   data() {
     return {
-      create: false,
-      user: {}
+      create: false
     };
   },
   methods: {
@@ -38,34 +38,12 @@ export default {
         this.newUser();
       }
     },
-    typedValue(objValue) {
-      if (Object.keys(objValue).indexOf("zipCode") > -1) {
-        if (objValue.zipCode.trim().length == 0) {
-          this.user.city = "";
-          this.user.street = "";
-          this.user.state = "";
-          this.user.zipCode = "";
-        } else {
-          objValue.zipCode = objValue.zipCode.replace(/\D/g, "");
-          if (objValue.zipCode.length === 8) {
-            findZipCode(objValue.zipCode).then(zipData => {
-              this.user.city = zipData.localidade;
-              this.user.street = zipData.logradouro;
-              this.user.state = zipData.uf;
-              this.user.zipCode = zipData.cep;
-            });
-          }
-        }
-        return;
-      }
-      Object.assign(this.user, objValue);
-    },
     newUser() {
       this.user = {
         name: "",
         email: "",
         password: "",
-        zipCode: "",
+        zip_code: "",
         street: "",
         number: "",
         city: "",
@@ -80,7 +58,7 @@ export default {
           email: this.user.email,
           address: {
             street: this.user.street,
-            zip_code: this.user.zipCode,
+            zip_code: this.user.zip_code,
             number: this.user.number,
             state: this.user.state,
             city: this.user.city

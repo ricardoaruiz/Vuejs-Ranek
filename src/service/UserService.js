@@ -38,4 +38,11 @@ export default class UserService extends BaseService {
       .then(response => console.log(response))
       .catch(error => this.error("Error on create user", error));
   }
+
+  update(user) {
+    return this.http()
+      .put(`${BASE_USER_URL}/${user.id}`, { ...user })
+      .then(result => result.data)
+      .catch(error => this.error("Error on update user", error));
+  }
 }
