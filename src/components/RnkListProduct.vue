@@ -5,6 +5,7 @@
         <div class="product" v-for="product in products" :key="product.id">
           <router-link :to="{name: 'product', params: {id: product.id} }">
             <img
+              v-if="product.images && product.images.length"
               class="product_image"
               :src="product.images[0].content"
               :alt="product.images[0].title"

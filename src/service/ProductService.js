@@ -45,10 +45,16 @@ export default class ProductService extends BaseService {
   }
 
   create(product) {
-    console.log(product);
     return this.http()
       .post(`${BASE_PRODUCT_URL}`, { ...product })
       .then(result => result.data)
       .catch(error => this.error("Erro ao criar um produto", error));
+  }
+
+  delete(productId) {
+    return this.http()
+      .delete(`${BASE_PRODUCT_URL}/${productId}`)
+      .then(result => result.data)
+      .catch(error => this.error("Erro ao remover um produto", error));
   }
 }

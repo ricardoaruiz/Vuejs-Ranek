@@ -39,6 +39,12 @@ export default new Vuex.Store({
     },
     ADD_USER_PRODUCT(state, payload) {
       state.user_products.unshift(payload);
+    },
+    DELETE_USER_PRODUCT(state, payload) {
+      const position = state.user_products.findIndex(
+        product => product.id === payload.id
+      );
+      state.user_products.splice(position, 1);
     }
   },
   actions: {
@@ -67,6 +73,9 @@ export default new Vuex.Store({
     },
     addUserProducts(context, payload) {
       context.commit("ADD_USER_PRODUCT", payload);
+    },
+    removeUserProduct(context, payload) {
+      context.commit("DELETE_USER_PRODUCT", payload);
     }
   },
   getters: {
