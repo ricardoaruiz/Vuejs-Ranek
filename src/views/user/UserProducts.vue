@@ -54,4 +54,14 @@ export default {
 h2 {
   margin-bottom: 20px;
 }
+
+.product-list-enter,
+.product-list-leave-to {
+  opacity: 0;
+  transform: translate3d(20px, 0, 0);
+}
+.product-list-enter-active,
+.product-list-leave-active {
+  transition: all 0.6s;
+}
 </style>

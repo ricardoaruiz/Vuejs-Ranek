@@ -36,6 +36,9 @@ export default new Vuex.Store({
     },
     SET_USER_PRODUCTS(state, payload) {
       state.user_products = payload;
+    },
+    ADD_USER_PRODUCT(state, payload) {
+      state.user_products.unshift(payload);
     }
   },
   actions: {
@@ -61,6 +64,9 @@ export default new Vuex.Store({
     },
     setUserProducts(context, payload) {
       context.commit("SET_USER_PRODUCTS", payload);
+    },
+    addUserProducts(context, payload) {
+      context.commit("ADD_USER_PRODUCT", payload);
     }
   },
   getters: {

@@ -43,4 +43,12 @@ export default class ProductService extends BaseService {
         this.error(`Erro ao listar os produtos do usuário ${userId}`, error)
       );
   }
+
+  create(product) {
+    console.log(product);
+    return this.http()
+      .post(`${BASE_PRODUCT_URL}`, { ...product })
+      .then(result => result.data)
+      .catch(error => this.error("Erro ao criar um produto", error));
+  }
 }
