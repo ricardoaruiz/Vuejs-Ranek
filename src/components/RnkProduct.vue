@@ -2,34 +2,41 @@
   <section>
     <transition>
       <div class="product" v-if="product">
-        <!-- Product Info  -->
-        <div class="product__info">
-          <h2 class="product__info_name">{{product.name}}</h2>
-          <div class="product__info_price">{{product.price | currency-format}}</div>
-          <p class="product__info_description">{{product.description}}</p>
-
-          <button class="btn" v-if="!product.sold">Comprar</button>
-          <button class="btn" v-else>Esgotado</button>
-        </div>
         <!-- Product Images -->
         <ul class="product__images" v-if="product.images">
           <li class="product__image" v-for="(image, index) in product.images" :key="index">
             <img :src="image.content" :alt="image.title" />
           </li>
         </ul>
+        <!-- Product Info  -->
+        <div class="product__info">
+          <h2 class="product__info_name">{{product.name}}</h2>
+          <div class="product__info_price">{{product.price | currency-format}}</div>
+          <p class="product__info_description">{{product.description}}</p>
+
+          <transition mode="out-in" v-if="!product.sold">
+            <button class="btn" v-if="!checkout" @click="checkout=true">Comprar</button>
+            <RnkCheckout v-else :product="product" />
+          </transition>
+
+          <button class="btn" v-else>Esgotado</button>
+        </div>
       </div>
     </transition>
   </section>
 </template>
 
 <script>
+import RnkCheckout from "@/components/RnkCheckout.vue";
 import ProductService from "@/service/ProductService.js";
 
 export default {
   name: "RnkProduto",
+  components: { RnkCheckout },
   props: ["id"],
   data() {
     return {
+      checkout: false,
       product: null
     };
   },

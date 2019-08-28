@@ -35,7 +35,7 @@ export default class UserService extends BaseService {
   create(user) {
     return this.http()
       .post(`${BASE_USER_URL}`, { ...user })
-      .then(response => console.log(response))
+      .then(response => response.data)
       .catch(error => this.error("Error on create user", error));
   }
 

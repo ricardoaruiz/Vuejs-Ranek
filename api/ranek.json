@@ -19,9 +19,9 @@
       "password": "123",
       "email": "gui@email.com",
       "address": {
-        "street": "Rua Lacônia",
-        "zip_code": "09271-010",
-        "number": "459",
+        "street": "Rua Baía Blanca",
+        "zip_code": "09270-550",
+        "number": "123",
         "state": "SP",
         "city": "Santo André"
       }
@@ -38,6 +38,19 @@
         "state": "SP",
         "city": "Artur Nogueira"
       }
+    },
+    {
+      "name": "Deise",
+      "password": "123",
+      "email": "deise@email.com",
+      "address": {
+        "street": "Rua Max Hergert",
+        "zip_code": "13150-522",
+        "number": "123",
+        "state": "SP",
+        "city": "Cosmópolis"
+      },
+      "id": 4
     }
   ],
   "product": [
@@ -47,7 +60,7 @@
       "description": "Esse é um novo notebook",
       "user_id": 1,
       "price": 4999,
-      "sold": true,
+      "sold": false,
       "images": [
         {
           "title": "Notebook",
@@ -351,5 +364,6 @@
         }
       ]
     }
-  ]
+  ],
+  "checkout": []
 }

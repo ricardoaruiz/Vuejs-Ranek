@@ -1,5 +1,5 @@
 <template>
-  <RnkUserForm :user="loggedUser" @onTypedValue="typedValue">
+  <RnkUserForm :user="user" @onTypedValue="typedValue">
     <div slot="action">
       <button class="btn btn_form" @click.prevent="update">Alterar</button>
     </div>
@@ -41,6 +41,9 @@ export default {
         })
         .catch(error => alert(error));
     }
+  },
+  created() {
+    this.user = this.loggedUser;
   }
 };
 </script>

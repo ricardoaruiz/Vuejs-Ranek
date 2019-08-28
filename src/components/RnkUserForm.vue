@@ -5,33 +5,37 @@
     </div>
 
     <form class="user_form">
-      <label for="name">Nome</label>
-      <input
-        type="text"
-        id="name"
-        name="name"
-        :value="user ? user.name : ''"
-        @blur="sendValue($event)"
-      />
+      <!-- Login data -->
+      <div class="user_form__login" v-if="showLoginInfo">
+        <label for="name">Nome</label>
+        <input
+          type="text"
+          id="name"
+          name="name"
+          :value="user ? user.name : ''"
+          @blur="sendValue($event)"
+        />
 
-      <label for="email">E-mail</label>
-      <input
-        type="email"
-        id="email"
-        name="email"
-        :value="user ? user.email : ''"
-        @blur="sendValue($event)"
-      />
+        <label for="email">E-mail</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          :value="user ? user.email : ''"
+          @blur="sendValue($event)"
+        />
 
-      <label for="password">Senha</label>
-      <input
-        type="password"
-        id="password"
-        name="password"
-        :value="user ? user.password : ''"
-        @blur="sendValue($event)"
-      />
+        <label for="password">Senha</label>
+        <input
+          type="password"
+          id="password"
+          name="password"
+          :value="user ? user.password : ''"
+          @blur="sendValue($event)"
+        />
+      </div>
 
+      <!-- Others user fields  -->
       <label for="zipCode">Cep</label>
       <input
         type="text"
@@ -88,7 +92,12 @@
 export default {
   name: "RnkUserForm",
   props: {
-    user: undefined
+    user: undefined,
+    showLoginInfo: {
+      type: Boolean,
+      required: false,
+      default: true
+    }
   },
   methods: {
     sendValue(event) {
@@ -114,5 +123,9 @@ export default {
   display: grid;
   align-items: center;
   padding: 0 20px;
+}
+.user_form__login {
+  display: grid;
+  align-items: center;
 }
 </style>
