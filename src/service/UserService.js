@@ -32,10 +32,17 @@ export default class UserService extends BaseService {
       .catch(error => this.error("Error on login", error));
   }
 
+  load(userId) {
+    return this.http()
+      .get(`${BASE_USER_URL}?id=${userId}`)
+      .then(result => result.data[0])
+      .catch(error => this.error("Erro ao carregar um usuário", error));
+  }
+
   create(user) {
     return this.http()
       .post(`${BASE_USER_URL}`, { ...user })
-      .then(response => response.data)
+      .then(response => response.data[0])
       .catch(error => this.error("Error on create user", error));
   }
 

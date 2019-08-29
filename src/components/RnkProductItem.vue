@@ -3,9 +3,9 @@
     <router-link :to="{ name: 'product', params: { id: product.id} }">
       Ver produto
       <img
+        v-if="product.images && product.images.length"
         :src="product.images[0].content"
         :alt="product.images[0].title"
-        v-if="product.images.length"
         class="product_img"
       />
     </router-link>

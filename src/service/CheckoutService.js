@@ -26,4 +26,18 @@ export default class CheckoutService extends BaseService {
       .then(result => result.data)
       .catch(error => this.error("Error on checkout", error));
   }
+
+  listByBuyer(buyerId) {
+    return this.http()
+      .get(`${BASE_CHECKOUT_URL}?buyer_id=${buyerId}`)
+      .then(result => result.data)
+      .catch(error => this.error("Erro ao listar as compras de por comprador"));
+  }
+
+  listBySeller(sellerId) {
+    return this.http()
+      .get(`${BASE_CHECKOUT_URL}?seller_id=${sellerId}`)
+      .then(result => result.data)
+      .catch(error => this.error("Erro ao listar as compras por vendedor"));
+  }
 }

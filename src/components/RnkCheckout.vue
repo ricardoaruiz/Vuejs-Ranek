@@ -65,7 +65,7 @@ export default {
     },
     getCheckoutObject() {
       const selectedProduct = { ...this.product };
-      delete selectedProduct.images;
+      // delete selectedProduct.images;
       delete selectedProduct.user_id;
       delete selectedProduct.sold;
 
